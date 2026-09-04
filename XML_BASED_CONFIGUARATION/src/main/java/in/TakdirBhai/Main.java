@@ -9,7 +9,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     static void main() {
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
-         OrderService obj1=context.getBean(OrderService.class);
+         OrderService obj1=context.getBean("orderService",OrderService.class);
          obj1.placeOrder();
+         PaymentService pa=context.getBean("paymentService", PaymentService.class);
     }
 }
