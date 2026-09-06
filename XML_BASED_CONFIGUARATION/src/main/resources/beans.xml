@@ -5,17 +5,31 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="paymentService" class="in.TakdirBhai.PaymentService">
-        <constructor-arg index="0" value="UPI"/>
-        <constructor-arg index="1" value="3"/>
-    </bean>
-<!--    <bean id="orderService" class="in.TakdirBhai.OrderService">-->
-<!--        <constructor-arg ref="paymentService"/>-->
-
+<!--    <bean id="paymentService" class="in.TakdirBhai.Payment.PaymentService">-->
+<!--        <constructor-arg index="0" value="UPI"/>-->
+<!--        <constructor-arg index="1" value="3"/>-->
 <!--    </bean>-->
-    <bean id="orderService" class="in.TakdirBhai.OrderService">
-        <property name="PaymentService" ref="paymentService"/>
-    </bean>
+<!--&lt;!&ndash;    <bean id="orderService" class="in.TakdirBhai.OrderService">&ndash;&gt;-->
+<!--&lt;!&ndash;        <constructor-arg ref="paymentService"/>&ndash;&gt;-->
 
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+<!--    <bean id="orderService" class="in.TakdirBhai.OrderService">-->
+<!--        <property name="PaymentService" ref="paymentService"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="upiPaymentService" class="in.TakdirBhai.Payment.UpiPaymentService"/>-->
+<!--    <bean id="cardPaymentService" class="in.TakdirBhai.Payment.CardPaymentService"/>-->
+<!--    <bean id="orderService" class="in.TakdirBhai.OrderService">-->
+<!--        <constructor-arg ref="upiPaymentService"/>-->
+<!--    </bean>-->
+    <bean id="userSeervice" class="in.TakdirBhai.UserSeervice" init-method="init" destroy-method="cleanup" scope="prototype"/>
+<!--        <constructor-arg name="username">-->
+<!--           <list>-->
+<!--               <value>Takdir</value>-->
+<!--               <value>Tanmay</value>-->
+<!--               <value>tanuj</value>-->
+<!--               <value>Amar</value>-->
+<!--           </list>-->
+<!--        </constructor-arg>-->
 
 </beans>
